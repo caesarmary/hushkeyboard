@@ -1,0 +1,61 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.aab
+*.apk
+output-metadata.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files and the release-signing credentials that unlock them
+*.jks
+*.keystore
+keystore.properties
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
+
+# Claude Code internal state
+.claude/
+
+# Local-only author/working notes — never pushed (holds personal info)
+*.local.md
+
+# Phase 4 model artifact — deliberately NOT committed (Session 25).
+# 138.86 MiB; provenance is the WSL conversion workspace output_trim/, sha256
+# fa9b3451174421920210d0fbed84ec77d7877cb9b6c4c46fa48c0ff972e946aa.
+# Superseded by the llama.cpp / GGUF runtime; kept ignored so no stray artifact
+# is ever committed.
+*.tflite
+
+# Phase 4 llama.cpp runtime — GGUF model artifact, deliberately NOT committed
+# 138.1 MiB Q8_0 conversion of SmolLM2-135M-Instruct; provenance (convert command,
+# pin commit, sha256) is documented in the README "Setup" section. Not committed
+# to keep the repo lean; rebuilt from source per the README.
+*.gguf
+
+# Phase 4 llama.cpp runtime — the four cross-compiled .so files (Session 52)
+# plus the NDK's libomp.so, deliberately NOT committed. ~50 MiB; provenance is
+# the pinned commit (4b4d13ae721e5eb79b749ca2c6feefd157f90ed7, tag b9688) and
+# the exact CMake configure documented in the README "Setup" section —
+# reproducible from source, not committed.
+app/src/main/jniLibs/
