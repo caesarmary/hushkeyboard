@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <inset android:insetLeft="@dimen/key_inset" android:insetRight="@dimen/key_inset"
+               android:insetTop="@dimen/key_inset" android:insetBottom="@dimen/key_inset">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/key_shift_capslock_pressed" />
+                <corners android:radius="@dimen/key_corner_radius" />
+            </shape>
+        </inset>
+    </item>
+    <item>
+        <inset android:insetLeft="@dimen/key_inset" android:insetRight="@dimen/key_inset"
+               android:insetTop="@dimen/key_inset" android:insetBottom="@dimen/key_inset">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/key_shift_capslock" />
+                <corners android:radius="@dimen/key_corner_radius" />
+            </shape>
+        </inset>
+    </item>
+</selector>

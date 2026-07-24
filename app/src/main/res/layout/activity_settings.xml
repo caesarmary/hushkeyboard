@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/settings_bg">
+
+    <!-- Flat, calm title bar. Displayed directly (no support-action-bar wiring needed);
+         the activity theme is NoActionBar. -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/settings_bg"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/settings_text_primary"
+        app:elevation="0dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/settings_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- ============ SECTION: TYPING ============ -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_typing" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Suggestions -->
+                    <LinearLayout style="@style/SettingsRow">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_suggestions_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_suggestions_description" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switch_suggestions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/settings_suggestions_label" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <!-- Autocorrect -->
+                    <LinearLayout style="@style/SettingsRow">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_autocorrect_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_autocorrect_description" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switch_autocorrect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/settings_autocorrect_label" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <!-- Auto-capitalization -->
+                    <LinearLayout style="@style/SettingsRow">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_autocaps_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_autocaps_description" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switch_autocaps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/settings_autocaps_label" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION: INPUT BEHAVIOR ============ -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_input" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Invert numpad enter/backspace -->
+                    <LinearLayout style="@style/SettingsRow">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_invert_numpad_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_invert_numpad_description" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switch_invert_numpad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/settings_invert_numpad_label" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <!-- Long-press delay slider + test -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout style="@style/SettingsRowText">
+                                <TextView style="@style/SettingsLabel"
+                                    android:text="@string/settings_long_press_label" />
+                                <TextView style="@style/SettingsDescription"
+                                    android:text="@string/settings_long_press_description" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/text_long_press_value"
+                                style="@style/SettingsValue"
+                                tools:ignore="HardcodedText"
+                                android:text="400 ms" />
+
+                        </LinearLayout>
+
+                        <SeekBar
+                            android:id="@+id/seekbar_long_press"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:min="0"
+                            android:max="26"
+                            android:progress="10" />
+
+                        <Button
+                            android:id="@+id/button_long_press_test"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/settings_long_press_test_button" />
+
+                        <TextView
+                            android:id="@+id/text_long_press_test_result"
+                            style="@style/SettingsDescription"
+                            android:layout_marginTop="4dp" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <!-- Shift double-tap window slider -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout style="@style/SettingsRowText">
+                                <TextView style="@style/SettingsLabel"
+                                    android:text="@string/settings_double_tap_label" />
+                                <TextView style="@style/SettingsDescription"
+                                    android:text="@string/settings_double_tap_description" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/text_double_tap_value"
+                                style="@style/SettingsValue"
+                                tools:ignore="HardcodedText"
+                                android:text="300 ms" />
+
+                        </LinearLayout>
+
+                        <SeekBar
+                            android:id="@+id/seekbar_double_tap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:min="0"
+                            android:max="10"
+                            android:progress="6" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <!-- Backspace repeat speed slider -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout style="@style/SettingsRowText">
+                                <TextView style="@style/SettingsLabel"
+                                    android:text="@string/settings_backspace_repeat_label" />
+                                <TextView style="@style/SettingsDescription"
+                                    android:text="@string/settings_backspace_repeat_description" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/text_backspace_repeat_value"
+                                style="@style/SettingsValue"
+                                tools:ignore="HardcodedText"
+                                android:text="300 ms" />
+
+                        </LinearLayout>
+
+                        <SeekBar
+                            android:id="@+id/seekbar_backspace_repeat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:min="0"
+                            android:max="8"
+                            android:progress="8" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ============ SECTION: PRIVACY ============ -->
+            <!-- Header + card wrapped in one container so the hardened build (where the
+                 learned-words feature is compiled out) hides the whole section via the
+                 existing row_clear_dictionary visibility toggle in SettingsActivity. -->
+            <LinearLayout
+                android:id="@+id/row_clear_dictionary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SettingsSectionHeader"
+                    android:text="@string/settings_section_privacy" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/SettingsCard">
+
+                    <LinearLayout style="@style/SettingsRow">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_clear_dictionary_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_clear_dictionary_description" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/button_clear_dictionary"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/destructive"
+                            android:text="@string/settings_clear_dictionary_button" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- ============ SECTION: ABOUT ============ -->
+            <TextView
+                style="@style/SettingsSectionHeader"
+                android:text="@string/settings_section_about" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/row_privacy_policy"
+                        style="@style/SettingsRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_privacy_policy_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_privacy_policy_description" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@color/settings_text_secondary"
+                            android:importantForAccessibility="no" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/row_credits"
+                        style="@style/SettingsRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_credits_label" />
+                            <TextView style="@style/SettingsDescription"
+                                android:text="@string/settings_credits_description" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@color/settings_text_secondary"
+                            android:importantForAccessibility="no" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/row_donate"
+                        style="@style/SettingsRow"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <LinearLayout style="@style/SettingsRowText">
+                            <TextView style="@style/SettingsLabel"
+                                android:text="@string/settings_donate_label" />
+                            <TextView
+                                android:id="@+id/text_donate_description"
+                                style="@style/SettingsDescription" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="@color/settings_text_secondary"
+                            android:importantForAccessibility="no" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

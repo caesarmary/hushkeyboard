@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Hushkeyboard" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- This night style shadows the day theme wholesale, so the accent override
+             must be repeated here or switches/sliders fall back to the M3 default purple.
+             @color/accent itself already resolves to the dark-mode teal. -->
+        <item name="colorPrimary">@color/accent</item>
+    </style>
+</resources>

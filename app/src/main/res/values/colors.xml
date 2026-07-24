@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Light theme keyboard palette (values-night/colors.xml holds the dark overrides).
+         Direction: quiet low-contrast surfaces with one disciplined teal accent. -->
+    <color name="keyboard_bg">#DDE1E6</color>
+    <color name="key_letter">#FFFFFF</color>
+    <color name="key_letter_pressed">#C7CCD3</color>
+    <color name="key_action">#C2C8D0</color>
+    <color name="key_action_pressed">#A9B0BA</color>
+    <color name="key_shift_off">#C2C8D0</color>
+    <color name="key_shift_off_pressed">#A9B0BA</color>
+    <color name="key_shift_oneshot">#0E7C86</color>
+    <color name="key_shift_oneshot_pressed">#0A656D</color>
+    <color name="key_shift_capslock">#0A656D</color>
+    <color name="key_shift_capslock_pressed">#074E54</color>
+    <color name="key_text">#1B1F24</color>
+    <color name="key_preview_bg">#0E7C86</color>
+    <color name="key_alternates_chip">#CDEBEE</color>
+    <color name="key_alternates_chip_active">#9BD7DD</color>
+
+    <!-- Canonical accent (sliders, active states, slider value labels). -->
+    <color name="accent">#0E7C86</color>
+    <color name="accent_pressed">#0A656D</color>
+
+    <!-- Text/icon colour ON action keys. In light mode action keys are LIGHT grey,
+         so their glyphs/icons must be dark (not the old hard-coded white). -->
+    <color name="key_text_action">#1B1F24</color>
+
+    <!-- Suggestion strip slot separators. -->
+    <color name="suggestion_divider">#C2C8D0</color>
+
+    <!-- Settings screen surfaces and text. -->
+    <color name="settings_bg">#F2F4F6</color>
+    <color name="settings_card">#FFFFFF</color>
+    <color name="settings_text_primary">#1B1F24</color>
+    <color name="settings_text_secondary">#5A626B</color>
+    <color name="divider">#C2C8D0</color>
+    <color name="destructive">#B3261E</color>
+</resources>

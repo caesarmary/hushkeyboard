@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="key_row_height">54dp</dimen>
+    <dimen name="key_corner_radius">8dp</dimen>
+    <dimen name="key_inset">3dp</dimen>
+    <dimen name="keyboard_padding_horizontal">4dp</dimen>
+    <dimen name="keyboard_padding_top">4dp</dimen>
+    <dimen name="keyboard_padding_bottom">8dp</dimen>
+    <dimen name="suggestion_strip_height">48dp</dimen>
+    <dimen name="key_preview_text_size">22sp</dimen>
+    <dimen name="settings_card_corner">12dp</dimen>
+    <dimen name="settings_card_margin">12dp</dimen>
+</resources>

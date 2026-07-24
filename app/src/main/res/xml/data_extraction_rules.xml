@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Data extraction rules for Android 12+ (API 31+).
+    Controls cloud backup (Google One Backup) and device-to-device transfer.
+
+    android:allowBackup="false" in the manifest blocks cloud backup on Android 11
+    and below. On Android 12+, dataExtractionRules takes precedence for cloud
+    backup AND is the only control for device transfer. Both sections must be
+    explicitly configured.
+
+    hushkeyboard stores no persistent user data today. These rules pre-emptively
+    exclude every storage domain so that future data (e.g. a learned-words
+    dictionary) cannot be backed up or transferred without an explicit decision
+    to allow it.
+-->
+<data-extraction-rules>
+
+    <cloud-backup disableIfNoEncryptionCapabilities="true">
+        <exclude domain="root" path="."/>
+        <exclude domain="file" path="."/>
+        <exclude domain="database" path="."/>
+        <exclude domain="sharedpref" path="."/>
+        <exclude domain="external" path="."/>
+    </cloud-backup>
+
+    <device-transfer>
+        <exclude domain="root" path="."/>
+        <exclude domain="file" path="."/>
+        <exclude domain="database" path="."/>
+        <exclude domain="sharedpref" path="."/>
+        <exclude domain="external" path="."/>
+    </device-transfer>
+
+</data-extraction-rules>
