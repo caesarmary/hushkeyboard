@@ -82,6 +82,4 @@ This file covers the two dormant obligations explicitly logged in `DEFINITION_OF
 llama.cpp as the core bundled native engine. It is **not** a full dependency-by-dependency licence
 audit of every library in the project (e.g. AndroidX, Kotlin standard library) — those were each
 checked against `DEFINITION_OF_RIGHT.md` Gate 6 when adopted, and carry standard, low-risk licences
-(mostly Apache 2.0), but have not been compiled into a single attribution file. If a more exhaustive
-audit is wanted before publishing, it should be scoped as its own session rather than assumed
-complete here.
+(mostly Apache 2.0), but have not been compiled into a single attribution file.
